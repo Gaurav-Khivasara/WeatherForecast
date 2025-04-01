@@ -1,0 +1,40 @@
+{
+  "coord": {
+    "lon": 76.7833,
+		"lat":19.2667
+	},
+	"weather": [{
+		"id": 800,
+		"main": "Clear",
+		"description": "clear sky",
+		"icon":"01n"
+	}],
+	"base": "stations",
+	"main": {
+		"temp": 301.12,
+		"feels_like": 299.85,
+		"temp_min": 301.12,
+		"temp_max": 301.12,
+		"pressure": 1012,
+		"humidity": 19,
+		"sea_level": 1012,
+		"grnd_level": 965
+	},
+	"visibility": 10000,
+	"wind": {
+		"speed": 1.18,
+		"deg": 313,
+		"gust": 1.34
+	},
+	"clouds": {"all": 1},
+	"dt": 1708444797,
+	"sys": {
+		"country": "IN",
+		"sunrise": 1708391947,
+		"sunset": 1708433674
+	},
+  "timezone": 19800,
+  "id": 1260341,
+  "name": "Parbhani",
+  "cod": 200
+}

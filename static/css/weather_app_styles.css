@@ -1,0 +1,90 @@
+body {
+    background: linear-gradient(to bottom right, #fff650, royalblue) no-repeat;
+    margin-top: 10%;
+    text-align: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+form {
+    font-size: x-large;
+}
+
+#place {
+    width: 70px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+    border-radius: 3px;
+    font-size: large;
+    transition: width 0.2s;
+}
+#place:focus {
+    outline: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    width: 100px;
+    box-shadow: 0 0 30px 1px white inset;
+}
+
+.btn {
+    background: transparent;
+    border: 1.5px solid black;
+    border-radius: 3px;
+}
+.btn:hover, .btn:focus {
+    color: white;
+    background-color: royalblue;
+    cursor: pointer;
+}
+
+.error-container {
+    border-radius: 3px;
+}
+#error {
+    background-color: white;
+    width: 270px;
+    text-align: left;
+    border-left: 4px solid red;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 2px #d9d9d9;
+}
+
+.flex-justify-center {
+    display: flex;
+    justify-content: center;
+}
+
+.align-vc {
+    display: flex;
+    align-items: center;
+}
+
+.weather {
+    width: fit-content;
+    padding: 0px 10px;
+    background-color: #7997ef;
+    border: 1.5px solid black;
+    border-radius: 7px;
+    margin-bottom: 25px;
+}
+.weather-temp-place {
+    flex-direction: row;
+    margin-right: 15px;
+}
+.weather-temp {
+    font-size: 35px;
+    border-bottom: 1px solid black;
+}
+.weather-place {
+    font-size: 30px;
+}
+.weather-description {
+    font-size: 30px;
+    margin-left: -10px;
+}
+
+img {
+    width: 100px;
+    margin: -5px 0;
+}

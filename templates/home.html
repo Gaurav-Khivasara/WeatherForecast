@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+
+    {% load static %}
+    <link href="{% static 'css/weather_app_styles.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- https://openweathermap.org/weather-conditions -->
+</head>
+<body>
+    <h1>Weather Forecast</h1>
+
+    <form method="post" >
+        {% csrf_token %}
+
+        <label for="place" >Right now in, </label>
+        <input placeholder="place..." type="text" id="place" name="place" data-city="{{request.POST.place}}" data-error="{{error}}" />
+        <input type="submit" value="Check" class="btn" />
+    </form>
+
+    {% if error %}
+        <br />
+        <div class="flex-justify-center error-container" >
+            <div id="error" >{{error|slice:":7"}}{{error|slice:"7:8"|upper}}{{error|slice:"8:"|safe}}</div>
+        </div>
+    {% endif %}
+
+    <br /><br />
+    {% if not error %}
+        <div class="flex-justify-center" >
+            {% for w in data.weather %}
+                <div class="weather align-vc" >
+                    <div class="weather-temp-place" >
+                        <div class="weather-temp" >
+                            {{temperature}} &deg;C
+                        </div>
+                        <div class="weather-place" >
+                            {{data.name}}
+                        </div>
+                    </div>
+                    <img src="https://openweathermap.org/img/wn/{{data.weather.0.icon}}.png" />
+                    <div class="weather-description" >
+                        {{w.description|slice:1|upper}}{{w.description|slice:"1:"|lower}}
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <script src="{% static 'js/weather_app_script.js' %}" ></script>
+</body>
+</html>
